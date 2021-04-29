@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', mainController.homePage);
 
 // page article
-router.get('/article', mainController.articlePage);
+router.get('/article/:id', mainController.articlePage);
 
 // page panier
 router.get('/cart', cartController.cartPage);

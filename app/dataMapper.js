@@ -12,11 +12,11 @@ const dataMapper = {
     },
 
     // Cherche une seule figurine dans la table figurine
-    getOneFigurine: (id, callback) => {
+    getOneFigurine: (figId, callback) => {
 
         // Pour éviter les injections SQL je passe directement la valeur dans un tableau
         const query = `SELECT * FROM "figurine" WHERE "id"=$1`;
-        const values = [id];
+        const values = [figId];
         client.query(query, values, callback);
     }
 };

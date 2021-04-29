@@ -1,21 +1,24 @@
 <%- include('partials/header.ejs') %>
-<%- include('partials/leftMenu.ejs') %>
-    <!-- /.col-lg-3 -->
 
-      <div class="col-lg-9">
+<main class="container container-main">
+
+  <div class="row">
+<%- include('partials/leftMenu.ejs') %>
+
+      <section class="col-lg-9">
 
         <div class="row">
           <% for (let figurine of figurines) { %>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="/article">
+              <a itemprop="url" href="/article/<%=figurine.id%>">
                 <img class="card-img-top" src="./images/<%=figurine.name%>.png" alt="">
                 <div class="badge-category badge badge-pill badge-gentil"><%=figurine.category%></div>
               </a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/article"><%=figurine.name%></a>
+                  <a href="/article/<%=figurine.id%>"><%=figurine.name%></a>
                 </h4>
                 <h5><%=figurine.price%></h5>
                 <p class="card-text"><%=figurine.description%></p>
@@ -32,7 +35,7 @@
         </div>
         <!-- /.row -->
 
-      </div>
+      </section>
       <!-- /.col-lg-9 -->
 
     </div>
@@ -41,11 +44,4 @@
   </div>
   <!-- /.container -->
 
- <%- include('partials/footer.ejs') %>
-
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js"></script>
-
-</body>
-
-</html>
+<%- include('partials/footer.ejs') %>
