@@ -1,0 +1,118 @@
+<%- include('partials/header.ejs') %>
+
+  <!-- Page Content -->
+  <div class="container container-main">
+
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center">Votre Panier</h3>
+
+          <table class="table">
+            <thead>
+              <th>Article</th>
+              <th>Quantité</th>
+              <th>Prix HT</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img class="img-thumbnail img-cart-list" src="./images/tifa.png" alt="">
+                  <div class="item-description">
+                      <h5 class="item-title">Tifa</h5>
+                      <p class="item-prize">$24.99</p>
+                  </div>
+                </td>
+
+                <td>
+                  <strong>1</strong>
+                  <a href="#">+</a> / <a href="#">-</a>
+                </td>
+
+                <td>
+                  <p class="item-subtotal">$24.99</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img class="img-thumbnail img-cart-list" src="./images/cloud.png" alt="">
+                  <div class="item-description">
+                      <h5 class="item-title">Cloud</h5>
+                      <p class="item-prize">$24.99</p>
+                  </div>
+                </td>
+
+                <td>
+                  <strong>2</strong>
+                  <a href="#">+</a> / <a href="#">-</a>
+                </td>
+                <td>
+                  <p class="item-subtotal">$49.98</p>
+                </td>
+              </tr>
+
+              <!-- Frais de port -->
+              <tr>
+                <td class="text-right" colspan="2">
+                  Frais de port
+                </td>
+                <td class="item-subtotal">
+                  $9.99
+                </td>
+              </tr>
+
+              <tfoot>
+                <tr>
+                  <td class="text-right" colspan="2">
+                    Total HT
+                  </td>
+                  <td class="item-subtotal">
+                    $84.96
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-right" colspan="2">
+                    TVA 20%
+                  </td>
+                  <td class="item-subtotal">
+                    $16.99
+                  </td>
+                </tr>
+
+                <tr class="row-total">
+                  <td class="text-right" colspan="2">
+                    Total TTC
+                  </td>
+                  <td class="item-total">
+                    $101.94
+                  </td>
+                </tr>
+
+              </tfoot>
+
+            </tbody>
+
+          </table>
+
+          <div class="row">
+            <div class="col text-right">
+                <div class="btn btn-success">
+                  Passer Commande
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+  <%- include('partials/footer.ejs') %>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js"></script>
+
+  </body>
+
+  </html>
