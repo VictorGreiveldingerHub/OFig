@@ -1,16 +1,16 @@
-<%- include('partials/header.ejs') %>
+<%- include('partials/header') %>
 
 <main class="container container-main">
 
   <div class="row">
 
-<%- include('partials/leftMenu.ejs') %>
+<%- include('partials/leftMenu') %>
 
       <section class="col-lg-9">
 
         <article class="row">
           <header class="col-lg-6">
-            <img intemprop="image" class="" src="./images/<%=figurine.name.toLowerCase()%>.png" alt="Illustration de la figurine <%=figurine.name%>">
+            <img intemprop="image" class="" src="/images/<%=figurine.name.toLowerCase()%>.png" alt="Illustration de la figurine <%=figurine.name%>">
           </header>
 
           <main class="col-lg-6">
@@ -29,7 +29,7 @@
                   </p>
                   <h5><%=figurine.price%></h5>
                   <p class="card-text">
-                    <a href="#" class="link-add-cart">+ Ajouter au panier</a>
+                    <a href="/cart/add/<%= figurine.id%>" class="link-add-cart">+ Ajouter au panier</a>
                   </p>
               </div>
             </div>
@@ -49,4 +49,4 @@
 
   <%- include('partials/reviewModal') %>
 
-<%- include('partials/footer.ejs') %>
+<%- include('partials/footer') %>

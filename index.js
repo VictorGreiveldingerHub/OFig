@@ -3,6 +3,9 @@ require('dotenv').config();
 
 const express = require('express');
 
+// Pour gérer les sessions
+const session = require('express-session');
+
 // on importe le router
 const router = require('./app/router');
 
@@ -11,6 +14,16 @@ const PORT = process.env.PORT || 5000;
 
 
 const app = express();
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge: (1000*60*60) // Pour la durée plus tard 1h
+  }
+}))
 
 // Utilisation d'EJS réglages moteur de rendu
 app.set('view engine', 'ejs');
