@@ -25,7 +25,7 @@
                   <p class="card-text">
                     Note moyenne : &#9733; &#9733; &#9733; &#9733; &#9734;
                     <br>
-                    <a href="#" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
+                    <a href="/article/<%=figurine.id%>/review" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
                   </p>
                   <h4 itemprop="offers" itemscope itemtype="http://schema.org/Offers" class="h5">
                     <meta itemprop="price" content="<%=figurine.price%>"/>
@@ -50,6 +50,5 @@
   </main>
   <!-- /.container -->
 
-  <%- include('partials/reviewModal') %>
 
 <%- include('partials/footer') %>

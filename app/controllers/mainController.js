@@ -38,6 +38,24 @@ const mainController = {
     });
   },
 
+  // Pour récupérer les reviews de l'article X
+  reviewFigurine: (req, res) => {
+    const reviewId = req.params.id;
+    dataMapper.getReview(reviewId, (err, data) => {
+      if (err) {
+        console.trace(err);
+        res.status(500).send(err);
+      } else {
+        const reviews = data.rows;
+        console.log(reviews);
+        console.log(reviewId);
+        res.render('./partials/reviewModal', {
+          reviews,
+          reviewId
+        });
+      };
+    });
+  },
 };
 
 

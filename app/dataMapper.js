@@ -18,6 +18,17 @@ const dataMapper = {
         const query = `SELECT * FROM "figurine" WHERE "id"=$1`;
         const values = [figId];
         client.query(query, values, callback);
+    },
+
+    // Recherche les reviews d'un article
+    getReview: (reviewId, callback) => {
+        // Requete pour accèder aux reviews d'un article
+        const query = `SELECT * FROM "review" WHERE "figurine_id"= $1`;
+
+        // On passe la valeur dans value
+        const value = [reviewId];
+        // On envoie les resultats pour la figurine demandé
+        client.query(query, value, callback);
     }
 };
 

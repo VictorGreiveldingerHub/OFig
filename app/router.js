@@ -13,11 +13,14 @@ router.get('/', mainController.homePage);
 // page article
 router.get('/article/:id', mainController.articlePage);
 
-// gestion du panier
+// page ajouter au panier
 router.get('/cart/add/:id', cartController.addCart);
 
 // page delete un article (decremente)
 router.get('/cart/delete/:id', cartController.removeFigurine);
+
+// page reviews article
+router.get('/article/:id/review', mainController.reviewFigurine);
 
 // page panier
 router.get('/cart', cartController.cartPage);
