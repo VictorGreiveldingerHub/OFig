@@ -8,7 +8,7 @@
 
       <section class="col-lg-9">
 
-        <article class="row">
+        <article itemscope itemtype="http://schema.org/Product" class="row">
           <header class="col-lg-6">
             <img intemprop="image" class="" src="/images/<%=figurine.name.toLowerCase()%>.png" alt="Illustration de la figurine <%=figurine.name%>">
           </header>
@@ -16,24 +16,27 @@
           <main class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                  <h3 class="card-title">
-                    <%=figurine.name%>
-                    <div class="badge badge-pill badge-gentil"><%=figurine.category%></div>
-                  </h3>
-                  <p class="card-text">Taille réelle : <%=figurine.size%></p>
-                  <p class="card-text"><%=figurine.description%></p>
+                  <div class="card-title">
+                    <h2 itemprop="name" class="h3 d-inline-block"><%=figurine.name%></h2>
+                    <h3 itemprop="category" class="badge badge-pill badge-gentil"><%=figurine.category%></h3>
+                  </div>
+                  <p itemprop="height" class="card-text">Taille réelle : <%=figurine.size%></p>
+                  <p itemprop="description" class="card-text"><%=figurine.description%></p>
                   <p class="card-text">
                     Note moyenne : &#9733; &#9733; &#9733; &#9733; &#9734;
                     <br>
                     <a href="#" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
                   </p>
-                  <h5><%=figurine.price%></h5>
+                  <h4 itemprop="offers" itemscope itemtype="http://schema.org/Offers" class="h5">
+                    <meta itemprop="price" content="<%=figurine.price%>"/>
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <%=figurine.price%>
+                  </h4>
                   <p class="card-text">
                     <a href="/cart/add/<%= figurine.id%>" class="link-add-cart">+ Ajouter au panier</a>
                   </p>
               </div>
             </div>
-
           </main>
         </article>
         <!-- /.row -->

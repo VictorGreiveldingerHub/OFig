@@ -1,47 +1,49 @@
 <%- include('partials/header') %>
 
-<main class="container container-main">
+  <main class="container container-main">
 
-  <div class="row">
-<%- include('partials/leftMenu') %>
+    <div class="row">
+      <%- include('partials/leftMenu') %>
 
-      <section class="col-lg-9">
+        <section class="col-lg-9">
 
-        <div class="row">
-          <% for (let figurine of figurines) { %>
+          <div class="row">
+            <% for (let figurine of figurines) { %>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a itemprop="url" href="/article/<%=figurine.id%>">
-                <img class="card-img-top" src="./images/<%=figurine.name%>.png" alt="">
-                <div class="badge-category badge badge-pill badge-gentil"><%=figurine.category%></div>
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="/article/<%=figurine.id%>"><%=figurine.name%></a>
-                </h4>
-                <h5><%=figurine.price%></h5>
-                <p class="card-text"><%=figurine.description%></p>
+            <article itemscope itemtype="http://schema.org/Product" class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a itemprop="url" href="/article/<%=figurine.id%>">
+                  <img itemprop="image" class="card-img-top" src="./images/<%=figurine.name%>.png" alt="Figurine d'<%=figurine.name%>">
+                  <h3 itemprop="category" class="badge-category badge badge-pill badge-gentil"><%=figurine.category%></h3>
+                </a>
+                <div class="card-body">
+                  <h2 class="h4 card-title">
+                    <a itemprop="name" href="/article/<%=figurine.id%>"><%=figurine.name%></a>
+                  </h2>
+                  <h4 itemprop="offers" itemscope itemtype="http://schema.org/Offers" class="h5 card-price">
+                    <meta itemprop="price" content="<%=figurine.price%>"/>
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <%=figurine.price%>
+                  </h4>
+                  <p itemprop="description" class="card-text"><%=figurine.description%></p>
+                </div>
+                <div class="card-footer">
+                  <span class="small text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                  <a itemprop="url" href="/cart/add/<%= figurine.id%>" class="link-add-cart">+ Ajouter au panier</a>
+                </div>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <a href="/cart/add/<%= figurine.id%>" class="link-add-cart">+ Ajouter au panier</a>
-              </div>
-            </div>
+            </article>
+
+            <% } %>
+
           </div>
+          <!-- /.row -->
 
-          <% } %>
-
-        </div>
-        <!-- /.row -->
-
-      </section>
-      <!-- /.col-lg-9 -->
-
+        </section>
+        <!-- /.col-lg-9 -->
     </div>
     <!-- /.row -->
-
-  </div>
+  </main>
   <!-- /.container -->
 
 <%- include('partials/footer') %>
